@@ -6,7 +6,7 @@
     <title>Presonal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-
+    <script src="https://kit.fontawesome.com/8b9c7932ad.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div id="header">
@@ -41,9 +41,86 @@
                 here a paragraph should be added here a paragraph should be added
                 here a paragraph should be added here a paragraph should be added
             </p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experiecnce')">Experiecnce</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <!--Skills-->
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>UI/UX</span><br>Desigining Web/App interfaces</li>
+                    <li><span>Web Development</span><br>Web app Development</li>
+                    <li><span>UI/UX</span><br>Building Android/iOs apps</li>
+                </ul>
+            </div>
+            <!--Experience-->
+            <div class="tab-contents" id="experiecnce">
+                <ul>
+                    <li><span>2021-current</span><br>doing something</li>
+                    <li><span>From- to</span><br>did that</li>
+                    <li><span>from to</span><br>did this</li>
+                </ul>
+            </div>
+            <!--Education-->
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2021-current</span><br>studied here</li>
+                    <li><span>From- to</span><br>studied there</li>
+                    <li><span>from to</span><br>did this</li>
+                </ul>
+            </div>
            </div> 
         </div>
     </div>
    </div>
+   <!-- ------------------services---------------- -->
+   <div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos ad alias voluptate eum non dolorum, illum asperiores. Ea praesentium nesciunt 
+                    aperiam necessitatibus consequuntur laudantium minus corrupti unde impedit consectetur?</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos ad alias voluptate eum non dolorum, illum asperiores. Ea praesentium nesciunt 
+                    aperiam necessitatibus consequuntur laudantium minus corrupti unde impedit consectetur?</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos ad alias voluptate eum non dolorum, illum asperiores. Ea praesentium nesciunt 
+                    aperiam necessitatibus consequuntur laudantium minus corrupti unde impedit consectetur?</p>
+                    <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+   </div>
+   <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    // this function will be called when a tab is clicked
+    //  it will remove the active class from all tabs and add it to the clicked tab
+    //  and it will remove the active class from all tab contents and add it to the clicked tab content
+    //
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+   </script>
 </body>
 </html> 
